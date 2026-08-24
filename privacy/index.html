@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mini English (Emini) — Chính sách quyền riêng tư</title>
+<meta name="description" content="Chính sách quyền riêng tư của ứng dụng Mini English / Emini (song ngữ Việt–Anh) — phục vụ Google Play.">
+<meta name="theme-color" content="#5B4FE0">
+<style>
+  :root{
+    --bg:#EBEDF5; --surface:#FFFFFF; --glance:#EEEBFF; --hair:#E2E4EE;
+    --ink:#14172B; --muted:#5B6178; --faint:#868CA1;
+    --brand:#5B4FE0; --brand-2:#7C6CF5; --accent:#FB7185; --amber:#F59E0B;
+    --shadow:0 10px 34px -14px rgba(20,23,43,.18);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#13141F; --surface:#1A1F35; --glance:#232A45; --hair:#313A5C;
+      --ink:#E7E8F5; --muted:#9AA0B5; --faint:#7B84A3;
+      --brand:#9A8DFF; --brand-2:#B7ADFF; --accent:#FB7185; --amber:#FBBF24;
+      --shadow:0 12px 36px -14px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#EBEDF5; --surface:#FFFFFF; --glance:#EEEBFF; --hair:#E2E4EE;
+    --ink:#14172B; --muted:#5B6178; --faint:#868CA1;
+    --brand:#5B4FE0; --brand-2:#7C6CF5; --accent:#FB7185; --amber:#F59E0B;
+    --shadow:0 10px 34px -14px rgba(20,23,43,.18);
+  }
+  :root[data-theme="dark"]{
+    --bg:#13141F; --surface:#1A1F35; --glance:#232A45; --hair:#313A5C;
+    --ink:#E7E8F5; --muted:#9AA0B5; --faint:#7B84A3;
+    --brand:#9A8DFF; --brand-2:#B7ADFF; --accent:#FB7185; --amber:#FBBF24;
+    --shadow:0 12px 36px -14px rgba(0,0,0,.5);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:0 20px 72px}
+
+  header{
+    position:sticky; top:0; z-index:5; background:color-mix(in srgb,var(--bg) 82%, transparent);
+    -webkit-backdrop-filter:saturate(1.4) blur(10px);
+    backdrop-filter:saturate(1.4) blur(10px);
+    border-bottom:1px solid var(--hair);
+  }
+  .bar{max-width:760px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:12px}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:-.01em}
+  .mark{
+    width:30px; height:30px; border-radius:9px; display:grid; place-items:center;
+    background:linear-gradient(135deg,#9A8DFF,#7C6CF5 55%,#5B4FE0);
+    color:#fff; font-weight:800; font-size:15px; box-shadow:0 4px 12px -3px rgba(91,79,224,.6);
+  }
+  .brand small{display:block; font-weight:500; font-size:11px; color:var(--muted); letter-spacing:.02em}
+  .langs{margin-left:auto; display:flex; gap:4px; background:var(--surface); border:1px solid var(--hair);
+    border-radius:999px; padding:3px}
+  .langs button{
+    border:0; background:transparent; color:var(--muted); font:inherit; font-size:13px; font-weight:600;
+    padding:5px 13px; border-radius:999px; cursor:pointer; transition:.18s;
+  }
+  .langs button[aria-pressed="true"]{background:var(--brand); color:#fff}
+  .langs button:focus-visible{outline:2px solid var(--brand-2); outline-offset:2px}
+
+  main{margin-top:34px}
+  .eyebrow{
+    text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:700; color:var(--brand-2);
+    margin:0 0 8px;
+  }
+  h1{font-size:clamp(28px,5vw,40px); line-height:1.12; letter-spacing:-.02em; margin:0 0 6px; text-wrap:balance}
+  .lead{color:var(--muted); font-size:16.5px; margin:0 0 26px; max-width:60ch}
+
+  .meta{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px;
+    background:var(--hair); border:1px solid var(--hair); border-radius:14px; overflow:hidden; margin-bottom:26px;
+  }
+  .meta div{background:var(--surface); padding:12px 15px}
+  .meta dt{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--faint); font-weight:700; margin-bottom:3px}
+  .meta dd{margin:0; font-size:14px; font-weight:600}
+  .meta a{color:var(--brand); text-decoration:none}
+
+  .glance{
+    background:var(--glance); border:1px solid var(--hair); border-left:4px solid var(--brand);
+    border-radius:14px; padding:18px 20px; margin-bottom:34px; box-shadow:var(--shadow);
+  }
+  .glance h2{margin:0 0 10px; font-size:14px; text-transform:uppercase; letter-spacing:.08em; color:var(--brand)}
+  .glance ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:8px}
+  .glance li{color:var(--ink)}
+  .glance strong{color:var(--brand)}
+
+  section.s{border-top:1px solid var(--hair); padding-top:26px; margin-top:26px}
+  section.s:first-of-type{border-top:0; margin-top:0; padding-top:0}
+  h2.head{
+    display:flex; align-items:baseline; gap:12px; font-size:20px; letter-spacing:-.01em; margin:0 0 12px; text-wrap:balance;
+  }
+  .num{
+    flex:0 0 auto; min-width:30px; height:30px; padding:0 8px; border-radius:9px; display:inline-grid; place-items:center;
+    background:var(--glance); color:var(--brand); font-size:14px; font-weight:800; font-variant-numeric:tabular-nums;
+    transform:translateY(2px);
+  }
+  section.s p{margin:0 0 12px; color:var(--muted)}
+  section.s strong{color:var(--ink); font-weight:650}
+  section.s ul{margin:0 0 12px; padding-left:20px; color:var(--muted)}
+  section.s li{margin:6px 0}
+  section.s li strong{color:var(--ink)}
+  a{color:var(--brand); text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--brand) 35%,transparent); word-break:break-word}
+  a:hover{border-bottom-color:var(--brand)}
+
+  footer{border-top:1px solid var(--hair); margin-top:38px; padding-top:20px; color:var(--faint); font-size:13.5px}
+  footer a{color:var(--brand)}
+
+  [hidden]{display:none !important}
+  @media (max-width:520px){ .bar{padding:10px 16px} .wrap{padding:0 16px 56px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <span class="brand"><span class="mark">E</span><span>Mini English<small>com.nvtruong.emini</small></span></span>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" id="btn-vi" aria-pressed="true" onclick="setLang('vi')">Tiếng Việt</button>
+      <button type="button" id="btn-en" aria-pressed="false" onclick="setLang('en')">English</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<!-- ===================== VIETNAMESE ===================== -->
+<main id="doc-vi">
+  <p class="eyebrow">Chính sách quyền riêng tư</p>
+  <h1>Quyền riêng tư của bạn trên Mini English</h1>
+  <p class="lead">Mini English (Emini) là ứng dụng học tiếng Anh giao tiếp ưu tiên hoạt động ngoại tuyến. Trang này giải thích ứng dụng thu thập, sử dụng và chia sẻ thông tin như thế nào.</p>
+
+  <dl class="meta">
+    <div><dt>Cập nhật lần cuối</dt><dd>25/08/2026</dd></div>
+    <div><dt>Nhà phát triển</dt><dd>Trường Nguyễn</dd></div>
+    <div><dt>Ứng dụng</dt><dd>Mini English</dd></div>
+    <div><dt>Liên hệ</dt><dd><a href="mailto:nvtruong0205@gmail.com">nvtruong0205@gmail.com</a></dd></div>
+  </dl>
+
+  <div class="glance">
+    <h2>Tóm tắt nhanh</h2>
+    <ul>
+      <li>Ứng dụng <strong>không có tài khoản đăng nhập</strong> và <strong>không có máy chủ riêng của chúng tôi</strong>. Toàn bộ dữ liệu học tập được lưu <strong>cục bộ trên thiết bị của bạn</strong>.</li>
+      <li>Chúng tôi <strong>không thu thập và không gửi</strong> dữ liệu cá nhân của bạn về bất kỳ máy chủ nào của chúng tôi.</li>
+      <li>Ứng dụng <strong>không hiển thị quảng cáo</strong> và không tích hợp SDK quảng cáo nào (Mục 2).</li>
+      <li>Tính năng <strong>chấm phát âm</strong> dùng bộ nhận dạng giọng nói của hệ điều hành nên cần <strong>micro</strong> và <strong>Internet</strong> (Mục 4).</li>
+    </ul>
+  </div>
+
+  <section class="s"><h2 class="head"><span class="num">1</span>Thông tin lưu trên thiết bị của bạn</h2>
+    <p>Những thông tin sau chỉ được lưu <strong>cục bộ trên thiết bị</strong> (bộ nhớ riêng của ứng dụng) và <strong>không được truyền đi đâu</strong>:</p>
+    <ul>
+      <li>Tiến độ học: từ/mẫu câu đã học, phiên học, chuỗi ngày học (streak), thống kê và lịch sử.</li>
+      <li>Lịch ôn giãn cách (SRS) và danh sách câu yêu thích (bookmark).</li>
+      <li>Kết quả kiểm tra xếp lớp (trình độ CEFR gợi ý) và tiến độ trò chơi.</li>
+      <li>Tùy chọn cài đặt: chủ đề sáng/tối/theo hệ thống, cỡ chữ, bật/tắt phát âm (TTS), số câu mỗi phiên, hướng ôn tập, cấu hình nhắc học.</li>
+    </ul>
+    <p>Bạn có thể xóa dữ liệu này bất cứ lúc nào bằng chức năng <strong>"Đặt lại toàn bộ tiến độ"</strong> trong Cài đặt, hoặc <strong>gỡ cài đặt</strong> ứng dụng.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">2</span>Quảng cáo</h2>
+    <p>Ứng dụng <strong>không hiển thị quảng cáo</strong>. Ứng dụng <strong>không tích hợp bất kỳ SDK quảng cáo nào</strong> — không có mã nhận dạng quảng cáo (AD_ID), dữ liệu thiết bị hay dữ liệu tương tác quảng cáo nào được thu thập. Nếu quảng cáo được bổ sung trong tương lai, chính sách này sẽ được cập nhật trước khi thay đổi có hiệu lực.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">3</span>Phát âm (Text-to-Speech)</h2>
+    <p>Khi bạn nghe phát âm, nội dung chữ (từ/câu tiếng Anh) được gửi tới <strong>công cụ chuyển văn bản thành giọng nói (TTS) của thiết bị/hệ điều hành</strong> để tạo âm thanh. Việc xử lý do công cụ TTS trên máy bạn thực hiện; tùy thiết bị và nhà cung cấp, một số công cụ TTS có thể xử lý trên đám mây. Chúng tôi không lưu và không gửi nội dung này về máy chủ của chúng tôi.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">4</span>Chấm phát âm (Micro &amp; nhận dạng giọng nói)</h2>
+    <p>Ở các bài luyện nói/nhại theo (shadowing), khi bạn nhấn nút nói, ứng dụng dùng <strong>bộ nhận dạng giọng nói của hệ điều hành</strong> để chuyển lời nói của bạn thành văn bản và so khớp chấm điểm. Vì vậy tính năng này cần quyền <strong>micro</strong>.</p>
+    <p><strong>Quan trọng:</strong> bộ nhận dạng của hệ điều hành thường gửi âm thanh tới dịch vụ của <strong>Google</strong> (Android) hoặc <strong>Apple</strong> (iOS) để xử lý, nên cần <strong>Internet</strong>. Việc thu và xử lý âm thanh do các dịch vụ này thực hiện theo chính sách của họ. Ứng dụng chỉ nhận lại phần văn bản để chấm điểm; chúng tôi <strong>không lưu bản ghi âm</strong> và <strong>không gửi</strong> âm thanh về máy chủ của chúng tôi. Nếu bạn không cấp quyền micro hoặc không có mạng, bạn vẫn dùng được các phần còn lại của ứng dụng.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">5</span>Nhắc học (Thông báo cục bộ)</h2>
+    <p>Nếu bạn bật <strong>nhắc ôn hằng ngày</strong>, ứng dụng lên lịch <strong>thông báo cục bộ</strong> ngay trên thiết bị vào giờ bạn chọn. Không có dữ liệu nào rời khỏi máy để làm việc này.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">6</span>Sao lưu &amp; Khôi phục</h2>
+    <p>Chức năng <strong>Sao lưu</strong> xuất tiến độ của bạn ra một file JSON và để bạn tự <strong>chia sẻ</strong> hoặc <strong>sao chép</strong> qua ứng dụng khác. <strong>Khôi phục</strong> đọc file JSON bạn chọn để nạp lại tiến độ. Việc này chỉ diễn ra khi <strong>bạn chủ động thực hiện</strong>; ứng dụng không tự động tải dữ liệu lên bất kỳ đâu. Sau khi chia sẻ, dữ liệu nằm ở nơi bạn gửi tới (vd ứng dụng nhắn tin, bộ nhớ đám mây) và tuân theo chính sách của bên đó.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">7</span>Kiểm tra cập nhật ứng dụng</h2>
+    <p>Khi mở ứng dụng, ứng dụng đọc trang niêm yết công khai của Mini English trên Google Play để so sánh phiên bản đang cài với phiên bản đang phát hành, nhằm nhắc bạn cập nhật khi có bản mới hơn. Việc kiểm tra này <strong>không gửi bất kỳ dữ liệu cá nhân hay dữ liệu học tập nào</strong> của bạn — chỉ đọc trang công khai đó để so sánh số phiên bản.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">8</span>Quyền ứng dụng và lý do sử dụng</h2>
+    <ul>
+      <li><strong>Micro:</strong> ghi âm tạm thời để chấm phát âm (Mục 4), chỉ khi bạn nhấn nút nói.</li>
+      <li><strong>Internet:</strong> phục vụ nhận dạng giọng nói trực tuyến (Mục 4) và kiểm tra phiên bản ứng dụng (Mục 7).</li>
+      <li><strong>Thông báo:</strong> gửi nhắc học cục bộ (chỉ khi bạn bật, Mục 5).</li>
+    </ul>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">9</span>Những điều chúng tôi KHÔNG làm</h2>
+    <ul>
+      <li>Không yêu cầu đăng ký hay đăng nhập.</li>
+      <li>Không thu thập tên thật, email, danh bạ, vị trí hay ảnh của bạn.</li>
+      <li>Không hiển thị quảng cáo.</li>
+      <li>Không bán dữ liệu cá nhân.</li>
+      <li>Không sử dụng dịch vụ phân tích (analytics) hay báo lỗi (crash reporting) của bên thứ ba.</li>
+    </ul>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">10</span>Chia sẻ dữ liệu</h2>
+    <p>Chúng tôi không chia sẻ dữ liệu cá nhân với bên thứ ba. Ngoại lệ duy nhất là âm thanh dùng cho chấm phát âm được gửi tới dịch vụ nhận dạng giọng nói của <strong>Google/Apple</strong> như mô tả tại Mục 4, và dữ liệu bạn <strong>tự</strong> chia sẻ qua chức năng Sao lưu (Mục 6).</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">11</span>Quyền riêng tư của trẻ em</h2>
+    <p>Ứng dụng hướng tới đối tượng <strong>phổ thông</strong> và <strong>không nhắm đến trẻ em dưới 13 tuổi</strong>. Chúng tôi không cố ý thu thập dữ liệu cá nhân của trẻ em. Nếu bạn cho rằng trẻ em đã cung cấp dữ liệu, vui lòng liên hệ để chúng tôi hỗ trợ.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">12</span>Bảo mật, lưu giữ và xóa dữ liệu</h2>
+    <p>Dữ liệu học tập được lưu trong vùng lưu trữ riêng của ứng dụng trên thiết bị của bạn và tồn tại cho đến khi bạn xóa bằng <strong>"Đặt lại toàn bộ tiến độ"</strong> hoặc <strong>gỡ cài đặt</strong> ứng dụng. Không hệ thống nào an toàn tuyệt đối, nhưng do chúng tôi không truyền dữ liệu cá nhân của bạn ra bên ngoài nên rủi ro được giảm thiểu.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">13</span>Người dùng tại EEA / Vương quốc Anh (GDPR)</h2>
+    <p>Cơ sở pháp lý: <strong>lợi ích hợp pháp</strong> (vận hành ứng dụng) và, đối với dữ liệu gửi tới dịch vụ nhận dạng giọng nói, <strong>sự đồng ý</strong> của bạn khi chủ động nhấn nút nói (Mục 4). Bạn có quyền truy cập, xóa và phản đối việc xử lý dữ liệu — thực hiện trực tiếp trong ứng dụng qua chức năng "Đặt lại toàn bộ tiến độ" hoặc bằng cách gỡ cài đặt.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">14</span>Thay đổi chính sách</h2>
+    <p>Chúng tôi có thể cập nhật chính sách này theo thời gian. Phiên bản mới sẽ được đăng tại cùng địa chỉ và cập nhật ngày "Cập nhật lần cuối" ở đầu trang.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">15</span>Liên hệ</h2>
+    <p>Mọi câu hỏi về quyền riêng tư, vui lòng liên hệ: <a href="mailto:nvtruong0205@gmail.com">nvtruong0205@gmail.com</a></p>
+  </section>
+
+  <footer>Mini English · com.nvtruong.emini · Cập nhật 25/08/2026</footer>
+</main>
+
+<!-- ===================== ENGLISH ===================== -->
+<main id="doc-en" hidden>
+  <p class="eyebrow">Privacy Policy</p>
+  <h1>Your privacy on Mini English</h1>
+  <p class="lead">Mini English (Emini) is an offline-first app for learning conversational English. This page explains what information the app collects, uses, and shares.</p>
+
+  <dl class="meta">
+    <div><dt>Last updated</dt><dd>2026-08-25</dd></div>
+    <div><dt>Developer</dt><dd>Trường Nguyễn</dd></div>
+    <div><dt>App</dt><dd>Mini English</dd></div>
+    <div><dt>Contact</dt><dd><a href="mailto:nvtruong0205@gmail.com">nvtruong0205@gmail.com</a></dd></div>
+  </dl>
+
+  <div class="glance">
+    <h2>At a glance</h2>
+    <ul>
+      <li>The app has <strong>no user accounts</strong> and <strong>no servers of our own</strong>. All of your learning data is stored <strong>locally on your device</strong>.</li>
+      <li>We <strong>do not collect or send</strong> your personal data to any server of ours.</li>
+      <li>The app <strong>does not show ads</strong> and has no ad SDK integrated (Section 2).</li>
+      <li>The <strong>pronunciation scoring</strong> feature uses the operating system's speech recognizer, so it needs the <strong>microphone</strong> and <strong>Internet</strong> (Section 4).</li>
+    </ul>
+  </div>
+
+  <section class="s"><h2 class="head"><span class="num">1</span>Information stored on your device</h2>
+    <p>The following is stored <strong>only on your device</strong> (the app's private storage) and is <strong>never transmitted</strong> anywhere:</p>
+    <ul>
+      <li>Learning progress: learned words/phrases, sessions, day streak, statistics and history.</li>
+      <li>Spaced-repetition (SRS) schedule and bookmarked sentences.</li>
+      <li>Placement-test result (suggested CEFR level) and game progress.</li>
+      <li>Settings: light/dark/system theme, text size, text-to-speech on/off, sentences per session, review direction, study-reminder configuration.</li>
+    </ul>
+    <p>You can delete this data at any time via <strong>"Reset all progress"</strong> in Settings, or by <strong>uninstalling</strong> the app.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">2</span>Advertising</h2>
+    <p>The app <strong>does not show ads</strong>. The app has <strong>no ad SDK integrated</strong> — no advertising ID (AD_ID), device data, or ad-interaction data is collected. If ads are introduced in the future, this policy will be updated before the change takes effect.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">3</span>Text-to-Speech (pronunciation playback)</h2>
+    <p>When you play pronunciation, the text (English words/sentences) is sent to your <strong>device's / operating system's text-to-speech (TTS) engine</strong> to generate audio. This is processed by the TTS engine on your device; depending on your device and vendor, some TTS engines may process in the cloud. We do not store or send this content to our servers.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">4</span>Pronunciation scoring (microphone &amp; speech recognition)</h2>
+    <p>In speaking / shadowing exercises, when you tap the speak button the app uses your <strong>operating system's speech recognizer</strong> to turn your speech into text and score it. This feature therefore needs the <strong>microphone</strong> permission.</p>
+    <p><strong>Important:</strong> the OS recognizer typically sends audio to <strong>Google</strong> (Android) or <strong>Apple</strong> (iOS) services for processing, so it needs <strong>Internet</strong>. Capture and processing of that audio is performed by those services under their own policies. The app only receives the resulting text for scoring; we <strong>do not store recordings</strong> and <strong>do not send</strong> audio to our servers. If you do not grant the microphone permission or are offline, you can still use the rest of the app.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">5</span>Reminders (local notifications)</h2>
+    <p>If you enable <strong>daily study reminders</strong>, the app schedules <strong>local notifications</strong> on your device at the time you choose. No data leaves your device to do this.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">6</span>Backup &amp; Restore</h2>
+    <p>The <strong>Backup</strong> feature exports your progress to a JSON file and lets you <strong>share</strong> or <strong>copy</strong> it via another app. <strong>Restore</strong> reads a JSON file you pick to load progress back. This happens only when <strong>you initiate it</strong>; the app does not automatically upload data anywhere. Once shared, the data lives wherever you send it (e.g. a messaging app, cloud storage) under that provider's policy.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">7</span>App update check</h2>
+    <p>When you open the app, it reads Mini English's public Google Play listing page to compare the installed version with the currently published version, so it can prompt you to update when a newer one is available. This check does <strong>not send any of your personal data or learning data</strong> — it only reads that public page to compare version numbers.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">8</span>Permissions and why we use them</h2>
+    <ul>
+      <li><strong>Microphone:</strong> temporary recording for pronunciation scoring (Section 4), only when you tap the speak button.</li>
+      <li><strong>Internet:</strong> for online speech recognition (Section 4) and the app update check (Section 7).</li>
+      <li><strong>Notifications:</strong> local study reminders (only if you enable them, Section 5).</li>
+    </ul>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">9</span>What we do NOT do</h2>
+    <ul>
+      <li>No sign-up or login.</li>
+      <li>We do not collect your real name, email, contacts, location, or photos.</li>
+      <li>We do not show ads.</li>
+      <li>We do not sell personal data.</li>
+      <li>We do not use third-party analytics or crash-reporting services.</li>
+    </ul>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">10</span>Data sharing</h2>
+    <p>We do not share personal data with third parties. The only exceptions are the audio used for pronunciation scoring, which is sent to <strong>Google/Apple</strong> speech-recognition services as described in Section 4, and data that <strong>you</strong> share yourself via Backup (Section 6).</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">11</span>Children's privacy</h2>
+    <p>The app targets a <strong>general audience</strong> and is <strong>not directed to children under 13</strong>. We do not knowingly collect personal data from children. If you believe a child provided data, please contact us so we can help.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">12</span>Data security, retention and deletion</h2>
+    <p>Learning data is kept in the app's private storage on your device and persists until you delete it via <strong>"Reset all progress"</strong> or <strong>uninstall</strong> the app. No system is perfectly secure, but because we do not transmit your personal data externally, the risk is minimized.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">13</span>Users in the EEA / UK (GDPR)</h2>
+    <p>Legal basis: <strong>legitimate interests</strong> (app operation) and, for audio sent to speech-recognition services, your <strong>consent</strong> given by actively tapping the speak button (Section 4). You have rights of access, deletion, and objection — exercise them directly in the app via "Reset all progress" or by uninstalling it.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">14</span>Changes to this policy</h2>
+    <p>We may update this policy over time. New versions will be posted at the same URL, with the "Last updated" date changed.</p>
+  </section>
+
+  <section class="s"><h2 class="head"><span class="num">15</span>Contact</h2>
+    <p>For any privacy questions, contact: <a href="mailto:nvtruong0205@gmail.com">nvtruong0205@gmail.com</a></p>
+  </section>
+
+  <footer>Mini English · com.nvtruong.emini · Updated 2026-08-25</footer>
+</main>
+</div>
+
+<script>
+  function setLang(l){
+    var vi = l === 'vi';
+    document.getElementById('doc-vi').hidden = !vi;
+    document.getElementById('doc-en').hidden = vi;
+    document.getElementById('btn-vi').setAttribute('aria-pressed', vi);
+    document.getElementById('btn-en').setAttribute('aria-pressed', !vi);
+    document.documentElement.lang = l;
+    try{ history.replaceState(null,'', l==='en' ? '#en' : '#vi'); }catch(e){}
+  }
+  if (location.hash === '#en') setLang('en');
+</script>
+</body>
+</html>
